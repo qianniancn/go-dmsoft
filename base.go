@@ -78,6 +78,6 @@ func (com *dmsoft) SpeedNormalGraphic(enable int) int {
 }
 
 func (com *dmsoft) Ver() string {
-	ver, _ := oleutil.CallMethod(com.dm, "Ver")
+	ver, _ := com.IUnknown.CallMethod(com.dm, "Ver")
 	return ver.ToString()
 }
