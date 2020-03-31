@@ -77,7 +77,8 @@ func (com *dmsoft) SpeedNormalGraphic(enable int) int {
 	return int(ret.Val)
 }
 
+// 获取插件版本号
 func (com *dmsoft) Ver() string {
-	ver, _ := com.IUnknown.CallMethod(com.dm, "Ver")
+	ver, _ := oleutil.CallMethod(com.dm, "Ver")
 	return ver.ToString()
 }
