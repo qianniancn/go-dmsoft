@@ -23,21 +23,20 @@ type dmsoft struct {
 }
 
 // New return *dmsoft.dmsoft
-func New() (*dmsoft, error) {
-	var err error
-	com := new(dmsoft)
+func New() (dm *dmsoft, err error) {
+	var com dmsoft
 	// 创建对象
 	ole.CoInitialize(0)
-	com.IUnknown, err = oleutil.CreateObject("com.dmsoft")
+	com.IUnknown, err = oleutil.CreateObject("dm.dmsoft")
 	if err != nil {
-		return nil, err
+		return
 	}
 	// 查询接口
 	com.dm, err = com.IUnknown.QueryInterface(ole.IID_IDispatch)
 	if err != nil {
-		return nil, err
+		return
 	}
-	return com, nil
+	return &com, nil
 }
 
 // Release 释放
