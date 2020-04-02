@@ -8,6 +8,7 @@ import (
 )
 
 func main() {
+	// 如果是x64编译或运行 需要设置export GOARCH=386
 	// 使用免注册方式注册大漠插件，也可以使用命令行注册
 
 	dmsoft.SetDllPathW("./dm.dll", 0)
