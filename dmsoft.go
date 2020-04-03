@@ -29,12 +29,12 @@ func New() (dm *dmsoft, err error) {
 	ole.CoInitialize(0)
 	com.IUnknown, err = oleutil.CreateObject("dm.dmsoft")
 	if err != nil {
-		return
+		return nil, err
 	}
 	// 查询接口
 	com.dm, err = com.IUnknown.QueryInterface(ole.IID_IDispatch)
 	if err != nil {
-		return
+		return nil, err
 	}
 	return &com, nil
 }
