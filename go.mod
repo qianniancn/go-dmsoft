@@ -1,4 +1,4 @@
-module github.com/qianniancn/go-dmsoft
+module github.com/qianniancn/go-Dmsoft
 
 go 1.14
 

@@ -1,7 +1,7 @@
 // +build windows
 // export GOARCH=386
 
-package dmsoft
+package Dmsoft
 
 import (
 	"syscall"
@@ -17,17 +17,17 @@ var (
 	procSetDllPathW = dmReg32.NewProc("SetDllPathW")
 )
 
-type dmsoft struct {
+type Dmsoft struct {
 	dm       *ole.IDispatch
 	IUnknown *ole.IUnknown
 }
 
-// New return *dmsoft.dmsoft
-func New() (dm *dmsoft, err error) {
-	var com dmsoft
+// New return *Dmsoft.Dmsoft
+func New() (dm *Dmsoft, err error) {
+	var com Dmsoft
 	// 创建对象
 	ole.CoInitialize(0)
-	com.IUnknown, err = oleutil.CreateObject("dm.dmsoft")
+	com.IUnknown, err = oleutil.CreateObject("dm.Dmsoft")
 	if err != nil {
 		return nil, err
 	}
@@ -40,7 +40,7 @@ func New() (dm *dmsoft, err error) {
 }
 
 // Release 释放
-func (com *dmsoft) Release() {
+func (com *Dmsoft) Release() {
 	com.IUnknown.Release()
 	com.dm.Release()
 	ole.CoUninitialize()
