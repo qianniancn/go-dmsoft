@@ -5,7 +5,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/qianniancn/go-Dmsoft"
+	"github.com/qianniancn/go-DmSoft"
 )
 
 func main() {
@@ -14,9 +14,9 @@ func main() {
 	// 由于大漠是付费插件，某些功能可以免费使用，但是后台高级功能需要付费
 	dir, _ := os.Getwd()
 	// 这里是免注册方式
-	Dmsoft.SetDllPathW(dir+"\\dm.dll", 0)
+	DmSoft.SetDllPathW(dir+"\\dm.dll", 0)
 
-	dm, err := Dmsoft.New()
+	dm, err := DmSoft.New()
 	if err != nil {
 		panic(err)
 	}

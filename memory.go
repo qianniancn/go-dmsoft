@@ -1,6 +1,6 @@
 // 内存操作暂时不需要
 
-package Dmsoft
+package dmsoft
 
 // string DoubleToData(value)
 // string FindData(hwnd, addr_range, data)

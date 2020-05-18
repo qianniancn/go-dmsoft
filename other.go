@@ -1,18 +1,18 @@
 // 其他
 
-package Dmsoft
+package dmsoft
 
-func (com *Dmsoft) DmGuard(enable, lType int) int {
+func (com *DmSoft) DmGuard(enable, lType int) int {
 	ret, _ := com.dm.CallMethod("DmGuard", enable, lType)
 	return int(ret.Val)
 }
 
-func (com *Dmsoft) DmGuardParams(cmd, subcmd, param string) string {
+func (com *DmSoft) DmGuardParams(cmd, subcmd, param string) string {
 	ret, _ := com.dm.CallMethod("DmGuardParams", cmd, subcmd, param)
 	return ret.ToString()
 }
 
-func (com *Dmsoft) UnLoadDriver() int {
+func (com *DmSoft) UnLoadDriver() int {
 	ret, _ := com.dm.CallMethod("UnLoadDriver")
 	return int(ret.Val)
 }
