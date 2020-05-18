@@ -17,6 +17,7 @@ var (
 	procSetDllPathW = dmReg32.NewProc("SetDllPathW")
 )
 
+// DmSoft ...
 type DmSoft struct {
 	dm       *ole.IDispatch
 	IUnknown *ole.IUnknown
@@ -27,7 +28,7 @@ func New() (dm *DmSoft, err error) {
 	var com DmSoft
 	// 创建对象
 	ole.CoInitialize(0)
-	com.IUnknown, err = oleutil.CreateObject("dm.DmSoft")
+	com.IUnknown, err = oleutil.CreateObject("dm.dmsoft")
 	if err != nil {
 		return nil, err
 	}
