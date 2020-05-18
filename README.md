@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# go-DmSoft-
-go 调用大漠插件
-=======
 # go-dmsoft
 使用go调用大漠插件,使用[例子](https://github.com/qianniancn/go-dmsoft/tree/master/examples/windows/main.go) 包里包含了最新版本的大漠插件dll，然后就是大漠是付费插件
 
@@ -16,4 +12,3 @@ go 调用大漠插件
 
 #### Windows Cmd
 执行 `set GOARCH=386`
->>>>>>> 72e6eb010bfc645ee018450033caf1b793f68a88
