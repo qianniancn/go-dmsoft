@@ -17,6 +17,8 @@ func (com *DmSoft) CheckUAC() int {
 	return int(ret.Val)
 }
 
+// Delay 函数不推荐使用
+// 建议time.Sleep()
 func (com *DmSoft) Delay(mis int) int {
 	ret, _ := com.dm.CallMethod("Delay")
 	return int(ret.Val)
