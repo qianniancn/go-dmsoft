@@ -219,3 +219,7 @@ func (com *DmSoft) SetPicPwd(pwd string) int {
 	ret, _ := com.dm.CallMethod("SetExcludeRegion", pwd)
 	return int(ret.Val)
 }
+
+// v7.2136 新增的接口
+// 增加了接口SetFindPicMultithreadCount
+// 增加了接口FindPicSim FindPicSimEx FindPicSimE和FindPicSimMem FindPicSimMemEx FindPicSimMemE
