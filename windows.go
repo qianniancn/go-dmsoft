@@ -238,3 +238,6 @@ func (com *DmSoft) SetWindowTransparent(hwnd, trans int) int {
 	ret, _ := com.dm.CallMethod("SetWindowTransparent", hwnd, trans)
 	return int(ret.Val)
 }
+
+// v7.2127
+// 增加接口GetWindowThreadId
