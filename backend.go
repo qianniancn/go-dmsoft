@@ -136,3 +136,6 @@ func (com *DmSoft) UnBindWindow() int {
 	ret, _ := com.dm.CallMethod("UnBindWindow")
 	return int(ret.Val)
 }
+
+// v7.2144
+// 1. 增加了接口SetInputDm
