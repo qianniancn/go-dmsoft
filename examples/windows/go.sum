@@ -1,3 +1,4 @@
+github.com/go-ole/go-ole v1.2.4 h1:nNBDSCOigTSiarFpYE9J/KtEA1IOW4CNeqT9TQDqCxI=
 github.com/go-ole/go-ole v1.2.4/go.mod h1:XCwSNxSkXRo4vlyPy93sltvi/qJq0jqQhjqQNIwKuxM=
 github.com/qianniancn/go-dmsoft v1.0.2 h1:lq3d0FgDoFY1nisZP+2Oygom7u5OkimExR2U8iaiFAA=
 github.com/qianniancn/go-dmsoft v1.0.2/go.mod h1:Npf/0MkhbLGTuka6iGDVxPGpSKRe6kOp4cbR1odmN1g=
