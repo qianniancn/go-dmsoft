@@ -2,7 +2,7 @@
 大漠是付费插件，不充值无法使用！
 
 ## 安装
-`go get -u https://github.com/qianniancn/go-dmsoft`
+`go get -u github.com/qianniancn/go-dmsoft`
 
 ## 注意事项
 由于大漠插件是win32的Dll，所以在windows64位运行和编译的时候需要设置环境变量。
@@ -14,7 +14,7 @@
 执行 `set GOARCH=386`
 
 ### Goland设置环境
-![image](./docs/2023-01-10 172752.png)
+![image](./docs/2023-01-10-172752.png)
 
 ## 大漠自定义充值方法
 大漠默认充值最低100元，个人可能用不了那么多，充值太多不划算，所以我们去修改充值金额。
