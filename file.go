@@ -1,4 +1,4 @@
-// 文件操作可以通过go来实现
+// 文件操作
 
 package dmsoft
 

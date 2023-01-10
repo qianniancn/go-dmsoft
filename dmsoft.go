@@ -1,4 +1,6 @@
+//go:build windows
 // +build windows
+
 // export GOARCH=386
 
 package dmsoft
@@ -12,36 +14,33 @@ import (
 )
 
 var (
-	dmReg32         = syscall.NewLazyDLL("DmReg.dll")
-	procSetDllPathA = dmReg32.NewProc("SetDllPathA")
-	procSetDllPathW = dmReg32.NewProc("SetDllPathW")
+	dmReg32      = syscall.NewLazyDLL("DmReg.dll")
+	_SetDllPathA = dmReg32.NewProc("SetDllPathA")
+	_SetDllPathW = dmReg32.NewProc("SetDllPathW")
 )
 
-// DmSoft ...
-type DmSoft struct {
+type Dmsoft struct {
 	dm       *ole.IDispatch
 	IUnknown *ole.IUnknown
 }
 
-// New return *DmSoft.DmSoft
-func New() (dm *DmSoft, err error) {
-	var com DmSoft
-	// 创建对象
+func NewDmsoft() *Dmsoft {
+	var com Dmsoft
+	var err error
 	ole.CoInitialize(0)
 	com.IUnknown, err = oleutil.CreateObject("dm.dmsoft")
 	if err != nil {
-		return nil, err
+		panic(err)
 	}
-	// 查询接口
 	com.dm, err = com.IUnknown.QueryInterface(ole.IID_IDispatch)
 	if err != nil {
-		return nil, err
+		panic(err)
 	}
-	return &com, nil
+	return &com
 }
 
 // Release 释放
-func (com *DmSoft) Release() {
+func (com *Dmsoft) Release() {
 	com.IUnknown.Release()
 	com.dm.Release()
 	ole.CoUninitialize()
@@ -51,7 +50,7 @@ func (com *DmSoft) Release() {
 func SetDllPathA(path string, mode int) bool {
 	var _p0 *uint16
 	_p0, _ = syscall.UTF16PtrFromString(path)
-	ret, _, _ := syscall.Syscall(procSetDllPathA.Addr(), 2, uintptr(unsafe.Pointer(_p0)), uintptr(mode), 0)
+	ret, _, _ := _SetDllPathA.Call(uintptr(unsafe.Pointer(_p0)), uintptr(mode))
 	return ret != 0
 }
 
@@ -59,6 +58,6 @@ func SetDllPathA(path string, mode int) bool {
 func SetDllPathW(path string, mode int) bool {
 	var _p0 *uint16
 	_p0, _ = syscall.UTF16PtrFromString(path)
-	ret, _, _ := syscall.Syscall(procSetDllPathW.Addr(), 2, uintptr(unsafe.Pointer(_p0)), uintptr(mode), 0)
+	ret, _, _ := _SetDllPathW.Call(uintptr(unsafe.Pointer(_p0)), uintptr(mode))
 	return ret != 0
 }

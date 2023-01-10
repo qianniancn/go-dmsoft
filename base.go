@@ -1,82 +1,82 @@
 package dmsoft
 
-func (com *DmSoft) EnablePicCache(enable int) int {
+func (com *Dmsoft) EnablePicCache(enable int) int {
 	ret, _ := com.dm.CallMethod("EnablePicCache", enable)
 	return int(ret.Val)
 }
 
-func (com *DmSoft) GetBasePath() string {
+func (com *Dmsoft) GetBasePath() string {
 	ret, _ := com.dm.CallMethod("GetBasePath")
 	return ret.ToString()
 }
 
-func (com *DmSoft) GetDmCount() int {
+func (com *Dmsoft) GetDmCount() int {
 	ret, _ := com.dm.CallMethod("GetDmCount")
 	return int(ret.Val)
 }
 
-func (com *DmSoft) GetID() int {
+func (com *Dmsoft) GetID() int {
 	ret, _ := com.dm.CallMethod("GetID")
 	return int(ret.Val)
 }
 
-func (com *DmSoft) GetLastError() int {
+func (com *Dmsoft) GetLastError() int {
 	ret, _ := com.dm.CallMethod("GetLastError")
 	return int(ret.Val)
 }
 
-func (com *DmSoft) GetPath() string {
+func (com *Dmsoft) GetPath() string {
 	ret, _ := com.dm.CallMethod("GetPath")
 	return ret.ToString()
 }
 
-func (com *DmSoft) Reg(regCode string, verInfo string) int {
+func (com *Dmsoft) Reg(regCode string, verInfo string) int {
 	ret, _ := com.dm.CallMethod("Reg", regCode, verInfo)
 	return int(ret.Val)
 }
 
-func (com *DmSoft) RegEx(regCode, verInfo, ip string) int {
+func (com *Dmsoft) RegEx(regCode, verInfo, ip string) int {
 	ret, _ := com.dm.CallMethod("RegEx", regCode, verInfo, ip)
 	return int(ret.Val)
 }
 
-func (com *DmSoft) RegExNoMac(regCode, verInfo, ip string) int {
+func (com *Dmsoft) RegExNoMac(regCode, verInfo, ip string) int {
 	ret, _ := com.dm.CallMethod("RegExNoMac", regCode, verInfo, ip)
 	return int(ret.Val)
 }
 
-func (com *DmSoft) RegNoMac(regCode, verInfo, ip string) int {
+func (com *Dmsoft) RegNoMac(regCode, verInfo, ip string) int {
 	ret, _ := com.dm.CallMethod("RegNoMac", regCode, verInfo, ip)
 	return int(ret.Val)
 }
 
-func (com *DmSoft) SetDisplayInput(mode string) int {
+func (com *Dmsoft) SetDisplayInput(mode string) int {
 	ret, _ := com.dm.CallMethod("SetDisplayInput", mode)
 	return int(ret.Val)
 }
 
-func (com *DmSoft) SetEnumWindowDelay(delay int) int {
+func (com *Dmsoft) SetEnumWindowDelay(delay int) int {
 	ret, _ := com.dm.CallMethod("SetEnumWindowDelay", delay)
 	return int(ret.Val)
 }
 
-func (com *DmSoft) SetPath(path string) int {
+func (com *Dmsoft) SetPath(path string) int {
 	ret, _ := com.dm.CallMethod("SetPath", path)
 	return int(ret.Val)
 }
 
-func (com *DmSoft) SetShowErrorMsg(show int) int {
+func (com *Dmsoft) SetShowErrorMsg(show int) int {
 	ret, _ := com.dm.CallMethod("SetShowErrorMsg", show)
 	return int(ret.Val)
 }
 
-func (com *DmSoft) SpeedNormalGraphic(enable int) int {
+func (com *Dmsoft) SpeedNormalGraphic(enable int) int {
 	ret, _ := com.dm.CallMethod("SpeedNormalGraphic", enable)
 	return int(ret.Val)
 }
 
 // Ver get version
-func (com *DmSoft) Ver() string {
+func (com *Dmsoft) Ver() string {
 	ver, _ := com.dm.CallMethod("Ver")
 	return ver.ToString()
 }
