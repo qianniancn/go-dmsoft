@@ -1,8 +1,3 @@
-//go:build windows
-// +build windows
-
-// export GOARCH=386
-
 package dmsoft
 
 import (
