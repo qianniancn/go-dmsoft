@@ -45,7 +45,7 @@ func main() {
 
 func BindMultipleWindowsAsync() {
 	res := make(chan int) // 创建一个 channel,接收结果
-
+	defer close(res)
 	for i := 0; i < len(handleColl); i++ {
 		dm := dmsoft.NewDmsoft() // 创建多个大漠对象
 		dmColl = append(dmColl, dm)
