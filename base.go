@@ -80,7 +80,7 @@ func (com *Dmsoft) Hex32(value int) string {
 	return ret.ToString()
 }
 
-func (com *Dmsoft) Hex64(value int) string {
+func (com *Dmsoft) Hex64(value int64) string {
 	ret, _ := com.dm.CallMethod("Hex64", value)
 	return ret.ToString()
 }
