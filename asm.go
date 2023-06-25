@@ -2,9 +2,9 @@
 
 package dmsoft
 
-func (com *Dmsoft) AsmAdd(asmIns string) int {
+func (com *Dmsoft) AsmAdd(asmIns string) int64 {
 	ret, _ := com.dm.CallMethod("AsmAdd", asmIns)
-	return int(ret.Val)
+	return ret.Val
 }
 
 func (com *Dmsoft) AsmCall(hwnd, mode int) int64 {
