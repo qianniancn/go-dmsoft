@@ -220,12 +220,12 @@ func (com *Dmsoft) WriteDataFromBin(hwnd int, addr string, data int, len int) in
 	return int(ret.Val)
 }
 
-func (com *Dmsoft) WriteDouble(hwnd int, addr string, v float32) int {
+func (com *Dmsoft) WriteDouble(hwnd int, addr string, v float64) int {
 	ret, _ := com.dm.CallMethod("WriteDouble", hwnd, addr, v)
 	return int(ret.Val)
 }
 
-func (com *Dmsoft) WriteDoubleAddr(hwnd int, addr int64, v float32) int {
+func (com *Dmsoft) WriteDoubleAddr(hwnd int, addr int64, v float64) int {
 	ret, _ := com.dm.CallMethod("WriteDoubleAddr", hwnd, addr, v)
 	return int(ret.Val)
 }
@@ -240,22 +240,22 @@ func (com *Dmsoft) WriteFloatAddr(hwnd int, addr int64, v float32) int {
 	return int(ret.Val)
 }
 
-func (com *Dmsoft) WriteInt(hwnd int, addr string, itype int, v float32) int {
+func (com *Dmsoft) WriteInt(hwnd int, addr string, itype int, v int64) int {
 	ret, _ := com.dm.CallMethod("WriteInt", hwnd, addr, itype, v)
 	return int(ret.Val)
 }
 
-func (com *Dmsoft) WriteIntAddr(hwnd int, addr int64, itype int, v float32) int {
+func (com *Dmsoft) WriteIntAddr(hwnd int, addr int64, itype int, v int64) int {
 	ret, _ := com.dm.CallMethod("WriteIntAddr", hwnd, addr, itype, v)
 	return int(ret.Val)
 }
 
-func (com *Dmsoft) WriteString(hwnd int, addr string, itype int, v float32) int {
+func (com *Dmsoft) WriteString(hwnd int, addr string, itype int, v string) int {
 	ret, _ := com.dm.CallMethod("WriteString", hwnd, addr, itype, v)
 	return int(ret.Val)
 }
 
-func (com *Dmsoft) WriteStringAddr(hwnd int, addr int64, itype int, v float32) int {
+func (com *Dmsoft) WriteStringAddr(hwnd int, addr int64, itype int, v string) int {
 	ret, _ := com.dm.CallMethod("WriteStringAddr", hwnd, addr, itype, v)
 	return int(ret.Val)
 }
