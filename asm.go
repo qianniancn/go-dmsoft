@@ -7,9 +7,9 @@ func (com *Dmsoft) AsmAdd(asmIns string) int {
 	return int(ret.Val)
 }
 
-func (com *Dmsoft) AsmCall(hwnd, mode int) int {
+func (com *Dmsoft) AsmCall(hwnd, mode int) int64 {
 	ret, _ := com.dm.CallMethod("AsmCall", hwnd, mode)
-	return int(ret.Val)
+	return ret.Val
 }
 
 func (com *Dmsoft) AsmCallEx(hwnd, mode int, baseAddr string) int64 {

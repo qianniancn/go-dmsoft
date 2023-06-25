@@ -75,6 +75,16 @@ func (com *Dmsoft) SpeedNormalGraphic(enable int) int {
 	return int(ret.Val)
 }
 
+func (com *Dmsoft) Hex32(value int) string {
+	ret, _ := com.dm.CallMethod("Hex32", value)
+	return ret.ToString()
+}
+
+func (com *Dmsoft) Hex64(value int) string {
+	ret, _ := com.dm.CallMethod("Hex64", value)
+	return ret.ToString()
+}
+
 // Ver get version
 func (com *Dmsoft) Ver() string {
 	ver, _ := com.dm.CallMethod("Ver")

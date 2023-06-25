@@ -35,12 +35,12 @@ func (com *Dmsoft) FindFloatEx(hwnd int, addr_range string, float_value_min floa
 	return ret.ToString()
 }
 
-func (com *Dmsoft) FindInt(hwnd int, addr_range string, int_value_min int, int_value_max int, itype int) string {
+func (com *Dmsoft) FindInt(hwnd int, addr_range string, int_value_min int64, int_value_max int64, itype int) string {
 	ret, _ := com.dm.CallMethod("FindInt", hwnd, addr_range, int_value_min, int_value_max, itype)
 	return ret.ToString()
 }
 
-func (com *Dmsoft) FindIntEx(hwnd int, addr_range string, int_value_min int, int_value_max int, itype int, step int, multi_thread int, mode int) string {
+func (com *Dmsoft) FindIntEx(hwnd int, addr_range string, int_value_min int64, int_value_max int64, itype int, step int, multi_thread int, mode int) string {
 	ret, _ := com.dm.CallMethod("FindIntEx", hwnd, addr_range, int_value_min, int_value_max, itype, step, multi_thread, mode)
 	return ret.ToString()
 }
@@ -70,9 +70,9 @@ func (com *Dmsoft) GetCommandLine(hwnd int) string {
 	return ret.ToString()
 }
 
-func (com *Dmsoft) GetModuleBaseAddr(hwnd int, module string) int {
+func (com *Dmsoft) GetModuleBaseAddr(hwnd int, module string) int64 {
 	ret, _ := com.dm.CallMethod("GetModuleBaseAddr", hwnd, module)
-	return int(ret.Val)
+	return ret.Val
 }
 
 func (com *Dmsoft) GetModuleSize(hwnd int, module string) int {
@@ -80,9 +80,9 @@ func (com *Dmsoft) GetModuleSize(hwnd int, module string) int {
 	return int(ret.Val)
 }
 
-func (com *Dmsoft) GetRemoteApiAddress(hwnd int, base_addr string, fun_name string) int {
+func (com *Dmsoft) GetRemoteApiAddress(hwnd int, base_addr int64, fun_name string) int64 {
 	ret, _ := com.dm.CallMethod("GetRemoteApiAddress", hwnd, base_addr, fun_name)
-	return int(ret.Val)
+	return ret.Val
 }
 
 func (com *Dmsoft) Int64ToInt32(value int64) int {
@@ -140,14 +140,14 @@ func (com *Dmsoft) ReadFloatAddr(hwnd int, addr int64) float32 {
 	return float32(ret.Val)
 }
 
-func (com *Dmsoft) ReadInt(hwnd int, addr string, itype int) int {
+func (com *Dmsoft) ReadInt(hwnd int, addr string, itype int) int64 {
 	ret, _ := com.dm.CallMethod("ReadInt", hwnd, addr, itype)
-	return int(ret.Val)
+	return ret.Val
 }
 
-func (com *Dmsoft) ReadIntAddr(hwnd int, addr int64, itype int) int {
+func (com *Dmsoft) ReadIntAddr(hwnd int, addr int64, itype int) int64 {
 	ret, _ := com.dm.CallMethod("ReadIntAddr", hwnd, addr, itype)
-	return int(ret.Val)
+	return ret.Val
 }
 
 func (com *Dmsoft) ReadString(hwnd int, addr string, itype int, len int) string {
@@ -182,7 +182,7 @@ func (com *Dmsoft) TerminateProcess(pid int) int {
 
 func (com *Dmsoft) VirtualAllocEx(hwnd int, addr int64, size int, itype int) int64 {
 	ret, _ := com.dm.CallMethod("VirtualAllocEx", hwnd, addr, size, itype)
-	return int64(ret.Val)
+	return ret.Val
 }
 
 func (com *Dmsoft) VirtualFreeEx(hwnd int, addr int64) int {
