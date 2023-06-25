@@ -3,8 +3,7 @@
 大漠是付费插件，不充值无法使用
 
 ## 安装
-
-`go get -u github.com/qianniancn/go-dmsoft`
+`go get -u github.com/redzl/go-dmsoft`
 
 ## 注意事项
 

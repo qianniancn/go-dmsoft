@@ -1,4 +1,4 @@
-module github.com/qianniancn/go-dmsoft
+module github.com/redzl/go-dmsoft
 
 go 1.18
 

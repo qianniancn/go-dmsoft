@@ -36,12 +36,45 @@ func (com *Dmsoft) UnLoadDriver() int {
 	return int(ret.Val)
 }
 
-// long ActiveInputMethod(hwnd,input_method)
-// long CheckInputMethod(hwnd,input_method)
-// long EnterCri()
-// string ExecuteCmd(cmd,current_dir,time_out)
-// long FindInputMethod(input_method)
-// long InitCri()
-// long LeaveCri()
-// long ReleaseRef()
-// long SetExitThread(enable)
+func (com *Dmsoft) ActiveInputMethod(hwnd int, input_method int) int {
+	ret, _ := com.dm.CallMethod("ActiveInputMethod", hwnd, input_method)
+	return int(ret.Val)
+}
+func (com *Dmsoft) CheckInputMethod(hwnd int, input_method int) int {
+	ret, _ := com.dm.CallMethod("CheckInputMethod", hwnd, input_method)
+	return int(ret.Val)
+}
+func (com *Dmsoft) EnterCri() int {
+	ret, _ := com.dm.CallMethod("EnterCri")
+	return int(ret.Val)
+}
+
+func (com *Dmsoft) ExecuteCmd(cmd string, current_dir string, time_out int) string {
+	ret, _ := com.dm.CallMethod("ExecuteCmd", cmd, current_dir, time_out)
+	return ret.ToString()
+}
+
+func (com *Dmsoft) FindInputMethod(input_method int) int {
+	ret, _ := com.dm.CallMethod("FindInputMethod", input_method)
+	return int(ret.Val)
+}
+
+func (com *Dmsoft) InitCri() int {
+	ret, _ := com.dm.CallMethod("InitCri")
+	return int(ret.Val)
+}
+
+func (com *Dmsoft) LeaveCri() int {
+	ret, _ := com.dm.CallMethod("LeaveCri")
+	return int(ret.Val)
+}
+
+func (com *Dmsoft) ReleaseRef() int {
+	ret, _ := com.dm.CallMethod("ReleaseRef")
+	return int(ret.Val)
+}
+
+func (com *Dmsoft) SetExitThread(enable int) int {
+	ret, _ := com.dm.CallMethod("SetExitThread", enable)
+	return int(ret.Val)
+}
